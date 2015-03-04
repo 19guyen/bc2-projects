@@ -1,0 +1,103 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+body{
+	background-color: green;
+}
+
+header{
+	nav {
+		ul {
+			&:before,
+			&:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			li {
+				display: inline-block;
+				float: left;
+				width: 25%;
+
+			}
+		}
+	}
+}
+
+
+main {
+	section:first-of-type {
+		background-image: url("http://wallbervation.com/wp-content/uploads/2015/02/Nature-Wallpaper2.jpg");
+		background-size: cover;
+		background-position: center;
+		div:first-child{
+			width: 75%;
+			background-color: hsla(0, 0, 50%, .5);
+		}
+		div:last-child {
+			width: 25%;
+		}
+	}
+	section {
+		div:first-child{
+			width: 20%;
+			float: left;
+			padding: 10px;
+		}
+		div {
+			width: 60%;
+			float: left;
+			padding: 10px;
+		}
+		div:last-child{
+			width: 20%;
+			float: left;
+			padding: 10px;
+		}
+	}
+	section:last-of-type {
+		div:first-child {
+			width: 25%;
+		}
+		div:last-child {
+			width: 75%
+		}
+
+	}
+	section:before,
+	section:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@media screen and (min-width: 500px){
+	.mobile {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 756px){
+	nav{
+		li {
+			display: block;
+			width: 100%;
+			text-align: center;
+			padding: 10px 0; 
+		}
+	}
+}
+
+@media screen and (max-width: 500px){
+	section{
+		div{
+			width: 100% !important;
+		}
+	}
+	.no-phone {
+		display: none;
+	}
+
+}
+
